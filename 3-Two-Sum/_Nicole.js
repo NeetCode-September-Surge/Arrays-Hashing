@@ -5,17 +5,17 @@ class Solution {
 	 * @return {number[]}
 	 */
 	twoSum(nums, target) {
-		const map = new Map();
+		const map = new Map(); //create a new map
 
-		for (let i = 0; i < nums.length; i++) {
-			const rest = target - nums[i];
+		for (let i = 0; i < nums.length; i++) { //loop
+			const rest = target - nums[i]; //calculate the remaining from target
 
-			if (map.has(rest)) {
-				return [map.get(rest), i];
+			if (map.has(rest)) { //if the map has the remaining value
+				return [map.get(rest), i]; //return an array with the value associated with 'rest' in 'map' and the current index 'i'
 			}
-			map.set(nums[i], i);
+			map.set(nums[i], i); //otherwise add the current element 'nums[i]' and its index 'i' to the 'map'
 		}
-		return [];
+		return []; //if none of that happens return an empty array
 	}
 }
 
